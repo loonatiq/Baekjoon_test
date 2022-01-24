@@ -1,0 +1,11 @@
+const fs = require("fs");
+let input = fs.readFileSync("./input2588.txt").toString().split("\n");
+console.log(input);
+const [a, b] = input;
+const oneb = b % 10;
+const tenb = Math.floor((b % 100) / 10);
+const hundredb = Math.floor(b / 100);
+console.log(a * oneb);
+console.log(a * tenb);
+console.log(a * hundredb);
+console.log(a * b);
