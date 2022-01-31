@@ -13,7 +13,6 @@
 // 출력
 // 첫째 줄에 N의 사이클 길이를 출력한다.
 
-const { on } = require("events");
 const fs = require("fs");
 let input = fs.readFileSync("./input1110.txt").toString().split("\n");
 console.log(input);
