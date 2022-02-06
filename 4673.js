@@ -28,10 +28,21 @@ function NotSelfNumber(n) {
   for (let i = 0; i < q.length; i++) {
     result += q[i];
   }
-  result.map((value) => value.split(""));
-  console.log(result);
+  return result;
 }
-
-for (let i = 1; i < 100; i++) {
-  NotSelfNumber(i);
+let arr = [];
+let selfnum = [];
+console.log(NotSelfNumber(5));
+let index;
+for (let i = 1; i < 10000; i++) {
+  index = NotSelfNumber(i);
+  if (index < 10000) {
+    arr[index] = true;
+  }
 }
+for (let i = 1; i < 10000; i++) {
+  if (!arr[i]) {
+    selfnum.push(i);
+  }
+}
+console.log(selfnum.join("\n"));
