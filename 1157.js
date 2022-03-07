@@ -14,16 +14,26 @@ let input = fs
   .toUpperCase()
   .split("");
 
-  console.log(input);
-  // let arr = []
+let arr = [];
+let arr2 = [];
+for (let i = 0; i < input.length; i++) {
+  if (arr.indexOf(input[i]) < 0) {
+    arr.push(input[i]);
+  }
+}
 
-// for (let i = 0; i < input.length; i++) {
-//   let index = input.indexOf(input[i]);
-//   console.log(index);
-// }
+for (let j = 0; j < arr.length; j++) {
+  let count = 0;
+  for (let i = 0; i < input.length; i++) {
+    if (arr[j] === input[i]) {
+      count++;
+    }
+  }
+  arr2.push(count);
+}
 
-for(let i=0; i<input.length;i++){
-input.forEach(input[i] => {
-  input
-});
+if (arr2.filter((el) => el === Math.max(...arr2)).length > 1) {
+  console.log("?");
+} else {
+  console.log(arr[arr2.indexOf(Math.max(...arr2))]);
 }
