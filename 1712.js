@@ -14,8 +14,12 @@
 // 첫 번째 줄에 손익분기점 즉 최초로 이익이 발생하는 판매량을 출력한다. 손익분기점이 존재하지 않으면 -1을 출력한다.
 const fs = require("fs");
 let input = fs.readFileSync("./input1712.txt").toString().split(" ");
-let count = 1;
-while (+input[0] + +input[1] * count >= +input[2] * count) {
-  count++;
-}
-console.log(count);
+
+const A = input[0] * 1;
+const B = input[1] * 1;
+const C = input[2] * 1;
+
+const margin = C - B;
+const count = Math.floor(A / margin) + 1;
+
+console.log(margin <= 0 ? -1 : count);
