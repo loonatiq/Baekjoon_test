@@ -17,22 +17,17 @@ const input = fs
 const input1 = input.shift();
 let count = 0;
 let check = true;
-// console.log(input);
 for (let i = 0; i < input.length; i++) {
   for (let j = 0; j < input[i].length - 1; j++) {
     if (input[i][j] !== input[i][j + 1]) {
       if (input[i].indexOf(input[i][j + 1]) !== j + 1) {
         check = false;
-        console.log("a");
       }
     }
   }
   if (check === true) {
-    console.log("b");
     count++;
   }
   check = true;
 }
 console.log(count);
-// console.log(input[0][0]);
-// console.log(input[0].indexOf(input[0][0]));
